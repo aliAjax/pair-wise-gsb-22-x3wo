@@ -260,14 +260,377 @@ input {
   line-height: 1.6;
 }
 
+/* ---------------- 训练局 ---------------- */
+
+.stack-card small {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.intro-panel .intro-note {
+  color: #526070;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.rule-card {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: 8px;
+  padding: 16px;
+  background: #fbfdff;
+}
+
+.rule-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.rule-card p {
+  color: #526070;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.rule-card.rule-full {
+  border-left-color: var(--accent);
+}
+
+.rule-card.rule-clue {
+  border-left-color: var(--warn);
+}
+
+.rule-card.rule-zero {
+  border-left-color: #e11d48;
+}
+
+.rule-card.rule-practice {
+  border-left-color: #64748b;
+}
+
+.training-layout {
+  align-items: start;
+}
+
+.progress-total strong {
+  display: block;
+  font-size: 38px;
+  margin: 6px 0 2px;
+}
+
+.progress-total strong em {
+  font-style: normal;
+  font-size: 15px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.progress-line {
+  color: #526070;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.score-dots {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.score-dots li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.dot {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 26px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.dot.score-100 {
+  background: var(--accent);
+}
+
+.dot.score-60 {
+  background: var(--warn);
+}
+
+.dot.score-0 {
+  background: #e11d48;
+}
+
+.dot.score-none {
+  background: #cbd5e1;
+  color: #475569;
+}
+
+.score-dots li.pending .dot-name {
+  color: #94a3b8;
+}
+
+.dot-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag-practice {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, #ffffff);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.ghost-action {
+  width: 100%;
+  color: #64748b;
+}
+
+.resume-banner {
+  background: color-mix(in srgb, var(--accent) 10%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, #dbe3ef);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.clue-card {
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.clue-card.hidden {
+  border: 1px dashed #94a3b8;
+  background: #f8fafc;
+}
+
+.clue-mask {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.clue-mask p {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.clue-mask span {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.clue-card.revealed {
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, #dbe3ef);
+  background: color-mix(in srgb, var(--primary) 5%, #ffffff);
+}
+
+.clue-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin: 0;
+  padding: 18px;
+}
+
+.clue-item dt {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.clue-item dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+
+.clue-warn {
+  color: var(--warn);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.option-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.option-btn {
+  min-height: 52px;
+  font-size: 15px;
+  text-align: left;
+  padding: 10px 16px;
+  border-color: color-mix(in srgb, var(--primary) 25%, #dbe3ef);
+}
+
+.option-btn:hover {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 6%, #ffffff);
+}
+
+.giveup-btn {
+  width: 100%;
+  color: #64748b;
+  border-style: dashed;
+}
+
+.feedback-banner {
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.feedback-banner.ok {
+  background: color-mix(in srgb, var(--accent) 9%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, #dbe3ef);
+}
+
+.feedback-banner.bad {
+  background: color-mix(in srgb, #e11d48 8%, #ffffff);
+  border: 1px solid color-mix(in srgb, #e11d48 35%, #fecdd3);
+}
+
+.feedback-banner h2 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.feedback-banner p {
+  margin-bottom: 4px;
+  color: #334155;
+}
+
+.feedback-next {
+  color: #64748b !important;
+  font-size: 14px;
+  margin-bottom: 0 !important;
+}
+
+.answer-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.answer-card h3 {
+  padding: 16px 18px 0;
+  margin-bottom: 0;
+}
+
+.retry-hint {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.next-btn {
+  min-width: 160px;
+}
+
+.result-panel h3 {
+  margin: 26px 0 12px;
+}
+
+.result-summary h2 {
+  font-size: 30px;
+}
+
+.result-summary h2 strong {
+  font-size: 42px;
+  color: var(--primary);
+}
+
+.result-breakdown {
+  color: #526070;
+  margin-bottom: 0;
+}
+
+.result-list {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.result-row small {
+  display: block;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.all-pass {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.review-card {
+  border: 1px solid color-mix(in srgb, #e11d48 35%, #fecdd3);
+  border-left: 5px solid #e11d48;
+  border-radius: 8px;
+  background: #fff7f8;
+}
+
+.review-card h4 {
+  margin: 0;
+  padding: 14px 18px 0;
+  font-size: 16px;
+}
+
 @media (max-width: 860px) {
-  .hero,
-  .workspace,
-  .metrics-grid {
+  .rule-grid,
+  .review-list {
     grid-template-columns: 1fr;
   }
 
-  .field-grid {
+  .option-list,
+  .clue-list {
     grid-template-columns: 1fr;
   }
 }
